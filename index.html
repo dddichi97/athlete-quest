@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1220">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ATHLETE QUEST">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<title>ATHLETE QUEST PRO V7 - LEGEND EDITION</title>
+<style>
+:root{--bg:#0a101c;--panel:#121d2d;--panel2:#19283b;--line:#2b3d54;--txt:#eef5ff;--muted:#9aacc3;--green:#51dda0;--blue:#77b4ff;--gold:#ffc66e;--red:#ff8585;--purple:#c2a6ff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 70% -10%,#1d3855 0,transparent 40%),var(--bg);color:var(--txt);font-family:system-ui,-apple-system,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.wrap{max-width:1120px;margin:auto;padding:16px 15px 50px}.hero{padding:22px;border:1px solid #344a64;border-radius:23px;background:linear-gradient(130deg,#172b40,#101a29 70%);box-shadow:0 15px 50px #0005}.top{display:flex;align-items:center;justify-content:space-between;gap:10px}.brand{font-weight:900;letter-spacing:2px;color:#c5d8ed;font-size:13px}.chip{font-size:10px;font-weight:800;letter-spacing:1px;color:#092116;background:var(--green);padding:6px 10px;border-radius:30px}.hero h1{font-size:clamp(29px,6vw,48px);line-height:1;margin:20px 0 8px;letter-spacing:-1px}.muted{color:var(--muted)}.small{font-size:12px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:20px}.stat{padding:12px;border:1px solid #ffffff12;background:#08132188;border-radius:14px}.stat b{display:block;font-size:23px}.stat span{font-size:11px;color:var(--muted)}.nav{display:flex;gap:7px;overflow:auto;padding:14px 0 4px;position:sticky;top:0;background:#0a101ceF;z-index:4}.nav button,.tab{white-space:nowrap;border:1px solid var(--line);background:var(--panel);color:var(--muted);padding:9px 13px;border-radius:30px}.nav button.active,.tab.active{background:#1d5945;border-color:#347e68;color:#e3fff2}.page{display:none}.page.active{display:block}section{margin-top:19px}.card{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:15px}.head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:11px}.head h2{font-size:18px;margin:0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.btn{border:1px solid var(--line);background:var(--panel2);color:var(--txt);padding:9px 12px;border-radius:10px}.btn.primary{background:#187653;border-color:#299c70;color:white;font-weight:750}.btn.google{background:#f6f8fb;color:#172033;border-color:#fff}.btn.red{color:#ffb0b0}.btn:disabled{opacity:.5;cursor:not-allowed}input,select,textarea{width:100%;min-width:0;color:var(--txt);background:#0b1523;border:1px solid var(--line);border-radius:9px;padding:10px}label{display:grid;gap:5px;color:var(--muted);font-size:12px}form{display:grid;grid-template-columns:1fr 1fr;gap:10px}form .wide{grid-column:1/-1}.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.row>*{flex:1}.task{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);background:#101a28;border-radius:12px;padding:11px;margin-top:8px}.task input{width:20px;height:20px;accent-color:var(--green);flex:none;margin-top:2px}.task .desc{flex:1}.task.done{opacity:.6}.task.done .taskname{text-decoration:line-through}.taskname{font-weight:750;font-size:14px}.taskmeta{font-size:11px;color:var(--muted);margin-top:3px}.badge{font-size:10px;padding:4px 7px;border-radius:20px;background:#263950;color:#c6ddf5;white-space:nowrap}.bar{height:9px;background:#293b51;border-radius:20px;overflow:hidden}.bar>i{display:block;height:100%;background:linear-gradient(90deg,#35c88a,#a2f3c1);width:0}.tabs{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}.table{width:100%;border-collapse:collapse;font-size:12px}.table td,.table th{border-bottom:1px solid var(--line);padding:8px;text-align:left}.table th{color:var(--muted);font-weight:600}.note{border-left:3px solid var(--gold);background:#272318;color:#eadbbd;border-radius:8px;padding:11px 13px;font-size:12px;line-height:1.6}.chartbox{height:250px;position:relative}.big{font-size:29px;font-weight:850}.xpbar{height:8px;background:#30415a;border-radius:20px;overflow:hidden}.xpbar i{display:block;height:100%;background:linear-gradient(90deg,#9875ff,#d3b8ff)}.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}.calday{min-height:55px;background:#101a28;border:1px solid var(--line);border-radius:9px;padding:5px;font-size:11px}.calday.today{border-color:var(--green)}.calday .dot{display:block;width:6px;height:6px;background:var(--green);border-radius:50%;margin-top:5px}.authbox{max-width:560px;margin:20px auto}.hide{display:none!important}.pixelIcon{image-rendering:pixelated;filter:drop-shadow(0 0 8px #77b4ff55)}
+.collectionHero{background:linear-gradient(125deg,#1d2d49,#18243a 55%,#35234c);border-color:#65518b}
+.shopGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.shopItem{display:flex;gap:12px;align-items:center;padding:13px;border:1px solid #34445d;border-radius:14px;background:linear-gradient(135deg,#17263a,#101a29)}
+.shopIcon{width:52px;height:52px;display:grid;place-items:center;border-radius:13px;background:#0b1525;font-size:29px;box-shadow:inset 0 0 0 1px #ffffff12}
+.shopItem .desc{flex:1;min-width:0}.shopItem b{display:block}.shopItem .taskmeta{line-height:1.5}
+@media(max-width:650px){.shopGrid{grid-template-columns:1fr}}.footer{text-align:center;color:var(--muted);font-size:11px;margin-top:24px}
+@media(max-width:650px){.stats{grid-template-columns:repeat(2,1fr)}.grid,.grid3{grid-template-columns:1fr}.hero{padding:17px}.nav{margin:0 -15px;padding-left:15px;padding-right:15px}form{grid-template-columns:1fr}form .wide{grid-column:auto}.chartbox{height:220px}}
+#authPanel{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+ <div class="top"><div class="brand">ATHLETE QUEST / PERFORMANCE OS</div><span class="chip">LOCAL-FIRST · V7 LEGEND EDITION</span></div>
+ <h1>TRAIN SMART.<br>GET STRONGER.</h1>
+ <div class="muted small">中長距離を軸に、スピード・ジャンプ力・筋力も記録する自分専用トレーニングOS。</div>
+ <div class="stats">
+  <div class="stat"><b id="level">Lv.1</b><span id="rank">ROOKIE</span></div>
+  <div class="stat"><b id="xp">0 XP</b><span>総経験値</span></div>
+  <div class="stat"><b id="weekKm">0 km</b><span>今週の走行距離</span></div>
+  <div class="stat"><b id="streak">0日</b><span>連続記録日数</span></div>
+ </div>
+ <div style="margin-top:13px" class="row"><span class="small muted" id="xpLabel">次のレベルまで 100 XP</span><span class="small muted" style="text-align:right" id="userLabel">ゲストモード</span></div><div class="xpbar"><i id="xpBar"></i></div>
+</header>
+
+<div class="authbox card" id="authPanel" style="display:none">
+ <div class="head"><h2>アカウント / クラウド同期</h2><span class="badge" id="cloudState">ローカルモード</span></div>
+ <p class="small muted">まずはゲストとして利用できます。Firebaseを設定するとGoogle・メールログインと端末間同期が有効になります。</p>
+ <div id="signedOut">
+  <button class="btn google" id="googleBtn" style="width:100%;margin:5px 0">Googleでログイン</button>
+  <form id="authForm" style="margin-top:8px">
+   <label class="wide">メールアドレス<input id="email" type="email" autocomplete="email" placeholder="you@example.com" required></label>
+   <label class="wide">パスワード<input id="password" type="password" autocomplete="current-password" minlength="6" placeholder="6文字以上" required></label>
+   <button class="btn primary" type="submit" id="emailLogin">ログイン</button><button class="btn" type="button" id="emailSignup">新規登録</button>
+  </form>
+  <div class="row" style="margin-top:9px"><button class="btn" id="resetPassword">パスワード再設定</button><button class="btn" id="guestBtn">ゲストで続ける</button></div>
+ </div>
+ <div id="signedIn" class="hide"><div id="accountText" class="small"></div><div class="row" style="margin-top:10px"><button class="btn" id="syncBtn">今すぐ同期</button><button class="btn red" id="logoutBtn">ログアウト</button></div></div>
+ <details style="margin-top:14px"><summary class="small">Firebase接続設定（初回のみ）</summary>
+  <p class="small muted">Firebase ConsoleでWebアプリを登録し、AuthenticationのGoogle・メール/パスワードを有効化、Firestore Databaseを作成して設定JSONを貼り付けてください。</p>
+  <label>Firebase Web設定 JSON<textarea id="firebaseConfig" rows="6" placeholder='{"apiKey":"...","authDomain":"...","projectId":"...","appId":"..."}'></textarea></label>
+  <div class="row" style="margin-top:8px"><button class="btn primary" id="connectFirebase">Firebaseに接続</button><button class="btn" id="clearFirebase">設定を消去</button></div>
+  <p class="small muted">設定はこのブラウザに保存されます。FirebaseのAPIキーはWeb公開用設定ですが、Firestoreのセキュリティルールで本人以外のデータを読めないようにしてください。</p>
+ </details>
+</div>
+
+<nav class="nav">
+ <button class="active" data-page="home">ホーム</button><button data-page="training">トレーニング</button><button data-page="records">記録・成長</button><button data-page="calendar">カレンダー</button><button data-page="wellness">体調</button><button data-page="timer">タイマー</button><button data-page="goals">目標</button><button data-page="tournament">大会</button><button data-page="missions">ミッション</button><button data-page="collection">称号・ショップ</button><button data-page="formnotes">フォームノート</button><button data-page="data">データ管理</button>
+</nav>
+
+<main>
+<div class="page active" id="page-home">
+ <section class="grid">
+  <div class="card"><div class="head"><h2>今日のメニュー</h2><span class="badge">INDOOR</span></div><div id="todayTasks"></div><div class="bar" style="margin-top:12px"><i id="taskBar"></i></div><p class="small muted" id="taskSummary">0 / 0 完了</p></div>
+  <div class="card"><div class="head"><h2>クイック記録</h2></div><form id="quickLog">
+   <label>日付<input type="date" id="qDate" required></label><label>走行距離 km<input type="number" id="qKm" min="0" step=".1" placeholder="例 3.5"></label>
+   <label>練習時間 分<input type="number" id="qMin" min="0" placeholder="例 30"></label><label>練習メモ<input type="text" id="qMemo" placeholder="例 イージージョグ"></label>
+   <button class="btn primary wide" type="submit">練習を記録する</button>
+  </form></div>
+ </section>
+ <section class="card"><div class="head"><h2>週間走行距離</h2><span class="badge">7 DAYS</span></div><div class="big" id="weekDistance">0.0 km</div><div class="chartbox"><canvas id="weekChart"></canvas></div></section>
+ <section class="note">中長距離の走力は室内筋トレだけでは完成しません。走行距離やインターバルは、部活など安全に走れる環境で記録してください。疲労や痛みが強い日は休養を優先。</section>
+</div>
+
+<div class="page" id="page-training">
+ <section class="card"><div class="head"><h2>トレーニングチェックリスト</h2><span class="badge">INDOOR + TRACK</span></div>
+  <div class="tabs" id="taskFilters"><button class="tab active" data-filter="すべて">すべて</button><button class="tab" data-filter="中長距離">中長距離</button><button class="tab" data-filter="スピード">スピード</button><button class="tab" data-filter="ジャンプ">ジャンプ</button><button class="tab" data-filter="筋力">筋力</button><button class="tab" data-filter="体幹">体幹</button><button class="tab" data-filter="回復">回復</button></div>
+  <div class="row"><label>対象日<input type="date" id="taskDate"></label><button class="btn" id="resetTasks" style="align-self:end">チェック解除</button></div><div id="taskList"></div>
+ </section>
+ <section class="card">
+  <div class="head"><h2>ウォーターバッグ記録</h2><span class="badge">WATER BAG</span></div>
+  <p class="small muted">ウォーターバッグを使った練習を記録すると、専用称号が解放されるよ。</p>
+  <form id="waterBagForm">
+   <label>トレーニング<select id="wbType"><option value="core">体幹トレーニング</option><option value="squat">スクワット</option><option value="lunge">ランジ</option><option value="carry">バッグを持って歩く</option><option value="balance">バランス練習</option><option value="press">プレス・上半身</option><option value="other">その他</option></select></label>
+   <label>回数・時間<input id="wbAmount" maxlength="40" placeholder="例：左右10回 × 2セット"></label>
+   <label>練習時間（分）<input id="wbMinutes" type="number" min="0" max="180" value="10"></label>
+   <label>日付<input id="wbDate" type="date" required></label>
+   <label class="wide">メモ<input id="wbMemo" maxlength="100" placeholder="例：水の揺れを抑えることを意識"></label>
+   <button class="btn primary wide" type="submit">ウォーターバッグ練習を保存</button>
+  </form>
+  <div class="grid" style="margin-top:12px">
+   <div class="stat"><b id="wbSessionCount">0</b><span>練習回数</span></div>
+   <div class="stat"><b id="wbTotalMinutes">0分</b><span>合計時間</span></div>
+  </div>
+  <div id="wbHistory" style="margin-top:12px"></div>
+ </section>
+ <section class="card"><div class="head"><h2>メニューを追加</h2></div><form id="addTask">
+  <label>種目名<input id="taskName" required maxlength="60" placeholder="チューブ横歩き"></label><label>カテゴリー<select id="taskCat"><option>中長距離</option><option>スピード</option><option>ジャンプ</option><option>筋力</option><option>体幹</option><option>回復</option></select></label>
+  <label class="wide">回数・時間<input id="taskDose" placeholder="左右10歩 × 2セット"></label><button class="btn primary wide">＋ 追加する</button>
+ </form></section>
+ <section class="card"><div class="head"><h2>室内向け週間プラン</h2></div><div class="grid">
+  <div><b>月：筋力＋ジャンプ</b><p class="small muted">チューブ横歩き、スクワット、カーフレイズ、ポゴジャンプ（少量）</p></div>
+  <div><b>火：室内心肺＋体幹</b><p class="small muted">ステップタッチ、軽いもも上げ、プランク。無理のない強度。</p></div>
+  <div><b>木：筋力・補強</b><p class="small muted">ランジ、ヒップリフト、チューブニーアップ、体幹</p></div>
+  <div><b>金：回復</b><p class="small muted">足首・股関節の動きづくり、軽いストレッチ</p></div>
+ </div></section>
+</div>
+
+<div class="page" id="page-records">
+ <section class="card"><div class="head"><h2>成長曲線・自己ベスト</h2><span class="badge">PERFORMANCE</span></div>
+  <form id="recordForm">
+   <label>種目<select id="recType"><option value="1500m">1500m</option><option value="800m">800m</option><option value="400m">400m</option><option value="100m">100m</option><option value="垂直跳び">垂直跳び</option><option value="立ち幅跳び">立ち幅跳び</option></select></label>
+   <label>記録<input id="recValue" type="number" min="0" step=".01" placeholder="秒 / cm" required></label>
+   <label>測定日<input id="recDate" type="date" required></label><label>メモ<input id="recMemo" placeholder="大会・測定など"></label>
+   <button class="btn primary wide">記録を保存</button>
+  </form>
+  <div class="tabs" id="recordTabs"><button class="tab active" data-record="1500m">1500m</button><button class="tab" data-record="800m">800m</button><button class="tab" data-record="400m">400m</button><button class="tab" data-record="100m">100m</button><button class="tab" data-record="垂直跳び">垂直跳び</button><button class="tab" data-record="立ち幅跳び">立ち幅跳び</button></div>
+  <div class="big" id="pbValue">--</div><div class="small muted" id="pbLabel">自己ベスト</div><div class="chartbox"><canvas id="recordChart"></canvas></div><div id="recordHistory"></div>
+ </section>
+</div>
+
+<div class="page" id="page-calendar">
+ <section class="card"><div class="head"><h2>トレーニングカレンダー</h2><div class="row" style="flex:0"><button class="btn" id="prevMonth">‹</button><button class="btn" id="nextMonth">›</button></div></div><div class="head"><b id="monthLabel"></b><span class="small muted">練習記録のある日に●</span></div><div class="calendar" id="calendar"></div><div id="calendarDetail" class="small muted" style="margin-top:12px"></div></section>
+ <section class="card"><div class="head"><h2>週間・月間走行距離</h2></div><div class="grid"><div><div class="small muted">今週</div><div class="big" id="weekKm2">0 km</div></div><div><div class="small muted">今月</div><div class="big" id="monthKm">0 km</div></div></div><div class="chartbox"><canvas id="monthChart"></canvas></div></section>
+</div>
+
+<div class="page" id="page-wellness">
+ <section class="card"><div class="head"><h2>疲労度・体調記録</h2></div><form id="wellForm">
+  <label>日付<input type="date" id="wellDate" required></label><label>疲労度（1軽い〜5強い）<select id="fatigue"><option value="1">1 - とても元気</option><option value="2">2 - 少し疲れ</option><option value="3" selected>3 - 普通</option><option value="4">4 - かなり疲れ</option><option value="5">5 - とても疲れた</option></select></label>
+  <label>睡眠時間<input type="number" id="sleep" min="0" max="24" step=".5" placeholder="例 8"></label><label>筋肉痛（1〜5）<select id="soreness"><option value="1">1 - なし</option><option value="2">2 - 少し</option><option value="3">3 - 普通</option><option value="4">4 - 強い</option><option value="5">5 - とても強い</option></select></label>
+  <label class="wide">体調・メモ<input id="wellMemo" placeholder="脚が重い、よく眠れた など"></label><button class="btn primary wide">体調を保存</button>
+ </form><div id="wellHistory" style="margin-top:12px"></div></section>
+</div>
+
+<div class="page" id="page-timer">
+ <section class="card"><div class="head"><h2>インターバルタイマー</h2><span class="badge">REST / WORK</span></div>
+  <div class="grid"><label>運動時間（秒）<input type="number" id="workSec" value="30" min="1"></label><label>休憩時間（秒）<input type="number" id="restSec" value="30" min="1"></label><label>セット数<input type="number" id="rounds" value="6" min="1" max="50"></label><label>準備時間（秒）<input type="number" id="prepSec" value="5" min="0"></label></div>
+  <div style="text-align:center;padding:25px 0"><div class="small muted" id="timerPhase">READY</div><div class="big" style="font-size:64px" id="timerDisplay">00:30</div><div class="muted" id="roundDisplay">SET 0 / 6</div></div>
+  <div class="row"><button class="btn primary" id="timerStart">スタート</button><button class="btn" id="timerPause">一時停止</button><button class="btn" id="timerReset">リセット</button></div>
+ </section>
+</div>
+
+<div class="page" id="page-goals">
+ <section class="card"><div class="head"><h2>目標・達成予測</h2></div><form id="goalForm">
+  <label>種目<select id="goalType"><option value="1500m">1500m</option><option value="800m">800m</option><option value="400m">400m</option><option value="100m">100m</option><option value="垂直跳び">垂直跳び</option><option value="立ち幅跳び">立ち幅跳び</option></select></label>
+  <label>目標値<input id="goalValue" type="number" min="0" step=".01" placeholder="例 300（秒）" required></label>
+  <label>目標日<input id="goalDate" type="date" required></label><label>現在の記録<input id="goalCurrent" type="number" min="0" step=".01" placeholder="最新記録を入力"></label>
+  <button class="btn primary wide">目標を保存</button>
+ </form><div id="goalList" style="margin-top:14px"></div><section class="card" style="margin-top:14px"><div class="head"><h2>目標達成予測</h2><span class="badge">ESTIMATE</span></div><div id="goalForecast" class="small muted">目標と複数回の記録を登録すると予測を表示するよ。</div></section><div class="note" style="margin-top:12px">達成予測は入力した過去の記録から単純に傾向を表示する目安で、実際の競技成績を保証するものではありません。成長には個人差があり、無理な練習量の増加は避けよう。</div></section>
+</div>
+
+<div class="page" id="page-tournament">
+ <section class="card">
+  <div class="head"><h2>大会モード</h2><span class="badge">RACE DAY</span></div>
+  <form id="tournamentForm">
+   <label>大会名<input id="raceName" placeholder="例 新人戦" required></label>
+   <label>種目<select id="raceEvent"><option>1500m</option><option>800m</option><option>400m</option><option>100m</option><option>その他</option></select></label>
+   <label>大会日<input id="raceDate" type="date" required></label>
+   <label>目標タイム（秒・任意）<input id="raceTarget" type="number" min="0" step=".01" placeholder="例 290"></label>
+   <label class="wide">準備メモ<textarea id="raceMemo" rows="2" placeholder="招集時間、持ち物、作戦など"></textarea></label>
+   <button class="btn primary wide">大会を登録</button>
+  </form>
+  <div id="raceList" style="margin-top:14px"></div>
+ </section>
+ <section class="note">大会前は新しい強い練習を増やすより、睡眠・体調・いつもの準備を大切にしよう。痛みがある場合は無理に出場しないでね。</section>
+</div>
+
+<div class="page" id="page-missions">
+ <section class="card">
+  <div class="head"><h2>デイリーミッション</h2><span class="badge">DAILY QUEST</span></div>
+  <p class="small muted">今日のミッションを達成したらチェック。報酬は1日1回だけ受け取れるよ。</p>
+  <div id="missionList"></div>
+  <div class="row" style="margin-top:12px"><div><div class="small muted">今日の達成数</div><div class="big" id="missionCount">0 / 3</div></div><div><div class="small muted">獲得XP</div><div class="big" id="missionXP">0 XP</div></div></div>
+ </section>
+ <section class="card">
+  <div class="head"><h2>称号コレクション</h2></div>
+  <div id="badgeCollection" class="grid"></div>
+ </section>
+</div>
+
+
+<div class="page" id="page-collection">
+ <section class="card">
+  <div class="head"><div><h2>称号コレクション</h2><div class="small muted">走って、鍛えて、集めよう。</div></div><span class="badge">PIXEL TROPHIES</span></div>
+  <div class="grid3">
+   <div class="stat"><b id="titleUnlocked">0 / 100+</b><span>獲得した称号</span></div>
+   <div class="stat"><b id="coinBalance">0</b><span>コイン</span></div>
+   <div class="stat"><b id="titleRate">0%</b><span>コンプリート率</span></div>
+  </div>
+  <div class="bar" style="margin-top:12px"><i id="titleProgress"></i></div>
+  <div class="head" style="margin-top:18px"><h2>お気に入り称号</h2><span class="badge">EQUIPPED</span></div>
+  <div id="equippedTitle" class="task"><div class="desc">まだ称号を選んでいません。</div></div>
+ </section>
+ <section class="card">
+  <div class="head"><h2>称号図鑑</h2><span class="badge">100+ COLLECTION</span></div>
+  <div class="row">
+   <label>分類<select id="titleFilter"><option value="all">すべて</option><option value="distance">走行距離</option><option value="training">練習・継続</option><option value="record">記録</option><option value="race">大会</option><option value="wellness">コンディション</option><option value="form">フォーム研究</option><option value="waterbag">ウォーターバッグ</option><option value="level">レベル・クエスト</option></select></label>
+   <label>表示<select id="titleStateFilter"><option value="all">すべて</option><option value="owned">獲得済み</option><option value="locked">未獲得</option></select></label>
+  </div>
+  <div id="titleBook" class="grid" style="margin-top:12px"></div>
+ </section>
+ <section class="card">
+  <div class="head"><h2>コインショップ</h2><span class="badge">PIXEL ITEMS</span></div>
+  <p class="small muted">ミッション報酬や称号獲得でコインを集めて、プロフィール用アイテムを解放しよう。</p>
+  <div id="pixelShop" class="shopGrid"></div>
+ </section>
+</div>
+
+<div class="page" id="page-formnotes">
+ <section class="card">
+  <div class="head"><h2>フォーム改善ノート</h2><span class="badge">TECHNIQUE</span></div>
+  <form id="formNoteForm">
+   <label>日付<input id="formDate" type="date" required></label>
+   <label>チェック項目<select id="formArea"><option>姿勢</option><option>腕振り</option><option>接地</option><option>ストライド</option><option>ピッチ</option><option>呼吸・リズム</option><option>その他</option></select></label>
+   <label class="wide">今日できたこと<textarea id="formGood" rows="2" placeholder="例：上体を起こして走れた"></textarea></label>
+   <label class="wide">改善したいこと<textarea id="formImprove" rows="2" placeholder="例：疲れてくると肩に力が入る"></textarea></label>
+   <label class="wide">次回意識すること<textarea id="formNext" rows="2" placeholder="例：肩の力を抜いて腕を後ろに引く"></textarea></label>
+   <button class="btn primary wide">ノートを保存</button>
+  </form>
+  <div id="formNoteHistory" style="margin-top:14px"></div>
+ </section>
+</div>
+
+<div class="page" id="page-data">
+ <section class="card">
+  <div class="head"><h2>データ管理</h2><span class="badge">LOCAL SAVE</span></div>
+  <p class="small muted">記録はこのブラウザの端末内に自動保存されるよ。ブラウザのデータ削除や端末変更に備えて、定期的にバックアップしてね。</p>
+  <div class="grid">
+   <button class="btn primary" id="exportData">バックアップを書き出す</button>
+   <label class="btn" style="text-align:center">バックアップを読み込む<input id="importData" type="file" accept=".json,application/json" style="display:none"></label>
+  </div>
+  <div class="note" style="margin-top:12px">このバージョンはログインなしで使えるローカル保存版。記録はこのブラウザに自動保存され、バックアップファイルで別端末へ移せるよ。複数端末の自動クラウド同期はまだ有効ではありません。安全なクラウド環境を用意できた段階で追加できます。</div>
+  <div class="row" style="margin-top:12px"><div><div class="small muted">保存中の練習ログ</div><b id="dataRunCount">0件</b></div><div><div class="small muted">記録データ</div><b id="dataRecordCount">0件</b></div><div><div class="small muted">フォームノート</div><b id="dataFormCount">0件</b></div></div>
+ </section>
+</div>
+
+</main>
+<div class="footer">ATHLETE QUEST PRO · ログイン不要 / このブラウザに自動保存 · 定期的にバックアップしてください。</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+// Offline-first build: cloud authentication is intentionally disabled for now.
+const $=id=>document.getElementById(id), today=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`};
+const baseTasks=[
+["easy1","イージージョグ（部活・安全な場所）","中長距離","20〜40分・楽な会話ペース"],
+["easy2","流し（安全な場所）","スピード","80〜100m × 3〜4本"],
+["indoor1","ステップタッチ","中長距離","40秒 × 3セット"],
+["indoor2","その場もも上げ（軽め）","中長距離","30秒 × 3セット"],
+["jump1","ポゴジャンプ","ジャンプ","10回 × 2セット"],
+["strength1","チューブ横歩き","筋力","左右10歩 × 2セット"],
+["strength2","スクワット","筋力","12回 × 2セット"],
+["strength3","スプリットスクワット","筋力","左右8回 × 2セット"],
+["strength4","片足カーフレイズ","筋力","左右12回 × 2セット"],
+["strength5","チューブニーアップ","スピード","左右10回 × 2セット"],
+["core1","プランク","体幹","20〜30秒 × 2セット"],
+["core2","ヒップリフト","体幹","12回 × 2セット"],
+["recovery1","股関節・足首の軽い動きづくり","回復","各20秒程度"],
+["recovery2","休養・睡眠を優先","回復","疲労が強い日は休む"]
+].map(x=>({id:x[0],name:x[1],cat:x[2],dose:x[3],builtin:true}));
+let state={tasks:[...baseTasks],checks:{},runs:[],records:[],wellness:[],goals:[],customTasks:[],logs:[],tournaments:[],missions:{},formNotes:[],waterBagLogs:[],coins:0,titleUnlocks:{},equippedTitle:null,shopOwned:[]};
+let user=null,db=null,auth=null,cloudReady=false,filter="すべて",recordType="1500m",calDate=new Date(),charts={};
+let timer={interval:null,phase:"ready",left:30,round:0,running:false};
+const clone=o=>JSON.parse(JSON.stringify(o));
+function localSave(){localStorage.setItem("aq_v5_data",JSON.stringify(state))}
+function localLoad(){
+ try{
+  const keys=["aq_v5_data","aq_v4_data","aq_v3_data","aq_v2_data"];
+  let x=null;
+  for(const k of keys){const raw=localStorage.getItem(k);if(raw){try{x=JSON.parse(raw);if(x)break}catch(e){console.warn("保存データを読み込めません:",k,e)}}}
+  if(x){state={...state,...x};}
+  state.tournaments||=[];state.missions||={};state.formNotes||=[];state.waterBagLogs||=[];
+  state.coins=Number(state.coins)||0;state.titleUnlocks||={};state.shopOwned||=[];
+  state.equippedTitle??=null;
+  // Keep the original V5 storage key so V5/V6 records remain readable in this upgraded version.
+  if(x)localSave();
+ }catch(e){console.warn("ローカルデータの読み込みに失敗:",e)}
+}
+function msg(e){alert(e?.message||String(e))}
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function uid(){return crypto.randomUUID?crypto.randomUUID():String(Date.now()+Math.random())}
+function totalXP(){let taskXp=Object.values(state.checks).reduce((a,x)=>a+Object.values(x).filter(Boolean).length*10,0);let missionXp=Object.values(state.missions||{}).reduce((a,m)=>a+(m.claimed?m.xp||0:0),0);return taskXp+state.runs.length*20+state.records.length*30+state.wellness.length*5+missionXp}
+function rank(l){return l>=20?"ELITE":l>=12?"PRO":l>=7?"ADVANCED":l>=3?"ATHLETE":"ROOKIE"}
+function renderTop(){$("userLabel").textContent="端末内に自動保存";let xp=totalXP(),lv=Math.floor(xp/100)+1,into=xp%100; $("level").textContent="Lv."+lv;$("rank").textContent=rank(lv);$("xp").textContent=xp+" XP";$("xpLabel").textContent="次のレベルまで "+(100-into)+" XP";$("xpBar").style.width=into+"%";$("weekKm").textContent=weekKm().toFixed(1)+" km";$("streak").textContent=streak()+"日"}
+function weekStart(d=new Date()){let x=new Date(d);x.setHours(0,0,0,0);x.setDate(x.getDate()-((x.getDay()+6)%7));return x}
+function weekKm(){let start=weekStart();return state.runs.filter(r=>new Date(r.date+"T12:00:00")>=start).reduce((a,r)=>a+(+r.km||0),0)}
+function streak(){let days=[...new Set([...state.runs.map(x=>x.date),...Object.keys(state.checks).filter(d=>Object.values(state.checks[d]).some(Boolean))])].sort().reverse();if(!days.length)return 0;let n=0,d=new Date(today()+"T12:00:00");for(let s of days){if(s===d.toISOString().slice(0,10)){n++;d.setDate(d.getDate()-1)}else if(n===0&&s===today()){n++;d.setDate(d.getDate()-1)}else break}return n}
+function save(){localSave();renderAll();if(user&&db)syncCloud()}
+async function syncCloud(){if(!user||!db)return;try{await setDoc(doc(db,"users",user.uid,"private","athleteData"),{data:state,updatedAt:new Date().toISOString()});$("cloudState").textContent="同期済み";$("cloudState").style.background="#1d5945";}catch(e){$("cloudState").textContent="同期エラー";console.error(e);}}
+async function loadCloud(){if(!user||!db)return;try{const s=await getDoc(doc(db,"users",user.uid,"private","athleteData"));if(s.exists()){const cloud=s.data().data||{};state={...state,...cloud};localSave()}else await syncCloud();renderAll();$("cloudState").textContent="クラウド同期中";}catch(e){msg(e)}}
+function connectFirebase(){
+ alert("このバージョンではログイン・クラウド同期を停止しています。");
+}
+$("connectFirebase").onclick=connectFirebase;
+$("clearFirebase").onclick=()=>{localStorage.removeItem("aq_firebase_config");location.reload()};
+$("googleBtn").onclick=async()=>{if(!auth)return alert("先にFirebase接続設定をしてください");try{await signInWithPopup(auth,new GoogleAuthProvider())}catch(e){msg(e)}};
+$("authForm").onsubmit=async e=>{e.preventDefault();if(!auth)return alert("先にFirebase接続設定をしてください");try{await signInWithEmailAndPassword(auth,$("email").value,$("password").value)}catch(e){msg(e)}};
+$("emailSignup").onclick=async()=>{if(!auth)return alert("先にFirebase接続設定をしてください");try{await createUserWithEmailAndPassword(auth,$("email").value,$("password").value);alert("アカウントを作成したよ")}catch(e){msg(e)}};
+$("resetPassword").onclick=async()=>{if(!auth)return alert("先にFirebase接続設定をしてください");if(!$("email").value)return alert("メールアドレスを入力してね");try{await sendPasswordResetEmail(auth,$("email").value);alert("再設定メールを送信したよ")}catch(e){msg(e)}};
+$("logoutBtn").onclick=async()=>{if(auth)await signOut(auth)};
+$("guestBtn").onclick=()=>{$("authPanel").classList.add("hide");$("userLabel").textContent="ゲストモード（この端末のみ）"};
+$("syncBtn").onclick=syncCloud;
+try{localLoad()}catch(e){console.warn(e)}
+function page(name){document.querySelectorAll(".page").forEach(p=>p.classList.toggle("active",p.id==="page-"+name));document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.page===name));if(name==="records")renderRecords();if(name==="calendar")renderCalendar();if(name==="goals")renderGoals();if(name==="wellness")renderWellness();if(name==="tournament")renderTournaments();if(name==="missions")renderMissions();if(name==="collection")renderCollection();if(name==="formnotes")renderFormNotes();if(name==="data")renderDataPanel()}
+document.querySelector(".nav").onclick=e=>{let b=e.target.closest("button[data-page]");if(b)page(b.dataset.page)};
+function renderTasks(){let date=$("taskDate").value||today(),checks=state.checks[date]||{},list=state.tasks.filter(t=>filter==="すべて"||t.cat===filter);$("taskList").innerHTML=list.map(t=>`<div class="task ${checks[t.id]?"done":""}"><input type="checkbox" data-check="${t.id}" ${checks[t.id]?"checked":""}><div class="desc"><div class="taskname">${esc(t.name)}</div><div class="taskmeta">${esc(t.dose)}</div></div><span class="badge">${esc(t.cat)}</span>${t.builtin?"":`<button class="btn red" data-del="${t.id}">削除</button>`}</div>`).join("");let done=list.filter(t=>checks[t.id]).length;$("todayTasks").innerHTML=list.slice(0,5).map(t=>`<div class="task ${checks[t.id]?"done":""}"><input type="checkbox" data-homecheck="${t.id}" ${checks[t.id]?"checked":""}><div class="desc"><div class="taskname">${esc(t.name)}</div><div class="taskmeta">${esc(t.dose)}</div></div></div>`).join("")||'<p class="muted small">メニューなし</p>';$("taskSummary").textContent=`${done} / ${list.length} 完了`;$("taskBar").style.width=(list.length?done/list.length*100:0)+"%"}
+$("taskList").onchange=e=>{let id=e.target.dataset.check;if(!id)return;let d=$("taskDate").value||today();state.checks[d]||={};state.checks[d][id]=e.target.checked;save()};
+$("todayTasks").onchange=e=>{let id=e.target.dataset.homecheck;if(!id)return;let d=today();state.checks[d]||={};state.checks[d][id]=e.target.checked;save()};
+$("taskList").onclick=e=>{let id=e.target.dataset.del;if(id&&confirm("このメニューを削除する？")){state.tasks=state.tasks.filter(t=>t.id!==id);save()}};
+$("taskFilters").onclick=e=>{let f=e.target.dataset.filter;if(!f)return;filter=f;document.querySelectorAll("#taskFilters .tab").forEach(b=>b.classList.toggle("active",b.dataset.filter===f));renderTasks()};
+$("taskDate").value=today();$("taskDate").onchange=renderTasks;$("resetTasks").onclick=()=>{if(confirm("この日のチェックを解除する？")){state.checks[$("taskDate").value]={};save()}};
+$("addTask").onsubmit=e=>{e.preventDefault();state.tasks.push({id:uid(),name:$("taskName").value.trim(),cat:$("taskCat").value,dose:$("taskDose").value.trim(),builtin:false});e.target.reset();save()};
+$("wbDate").value=today();
+$("waterBagForm").onsubmit=e=>{
+ e.preventDefault();
+ state.waterBagLogs||=[];
+ state.waterBagLogs.push({id:uid(),type:$("wbType").value,amount:$("wbAmount").value.trim(),minutes:+$("wbMinutes").value||0,date:$("wbDate").value,memo:$("wbMemo").value.trim()});
+ e.target.reset();$("wbDate").value=today();$("wbMinutes").value=10;save();
+};
+$("qDate").value=today();$("quickLog").onsubmit=e=>{e.preventDefault();state.runs.push({id:uid(),date:$("qDate").value,km:+$("qKm").value||0,minutes:+$("qMin").value||0,memo:$("qMemo").value});e.target.reset();$("qDate").value=today();save()};
+function chart(id,labels,datasets,opts={}){if(!window.Chart)return;let el=$(id);if(!el)return;if(charts[id])charts[id].destroy();charts[id]=new Chart(el,{type:"line",data:{labels,datasets},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:"#b7c7db"}}},scales:{x:{ticks:{color:"#9aacc3"},grid:{color:"#26364a"}},y:{ticks:{color:"#9aacc3"},grid:{color:"#26364a"}}},...opts}})}
+function renderWeek(){let labels=[],vals=[];for(let i=6;i>=0;i--){let d=new Date();d.setDate(d.getDate()-i);let s=`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;labels.push(s.slice(5));vals.push(state.runs.filter(r=>r.date===s).reduce((a,r)=>a+(+r.km||0),0))}let sum=vals.reduce((a,b)=>a+b,0);$("weekDistance").textContent=sum.toFixed(1)+" km";chart("weekChart",labels,[{label:"走行距離 km",data:vals,borderColor:"#51dda0",backgroundColor:"#51dda033",fill:true,tension:.3}])}
+function renderRecords(){let rows=state.records.filter(r=>r.type===recordType).sort((a,b)=>a.date.localeCompare(b.date));let isTime=["1500m","800m","400m","100m"].includes(recordType);let best=rows.length?(isTime?Math.min(...rows.map(r=>+r.value)):Math.max(...rows.map(r=>+r.value))):null;$("pbValue").textContent=best===null?"--":(isTime?fmtTime(best):best+(recordType==="垂直跳び"?" cm":" cm"));$("pbLabel").textContent=best===null?"記録を追加してね":"自己ベスト · "+recordType;chart("recordChart",rows.map(r=>r.date),[{label:isTime?"タイム（秒）":"距離・高さ（cm）",data:rows.map(r=>+r.value),borderColor:"#77b4ff",backgroundColor:"#77b4ff22",fill:true,tension:.2}],isTime?{scales:{y:{reverse:true,ticks:{color:"#9aacc3"},grid:{color:"#26364a"}},x:{ticks:{color:"#9aacc3"},grid:{color:"#26364a"}}}}:{});$("recordHistory").innerHTML=rows.slice().reverse().map(r=>`<div class="task"><div class="desc"><b>${esc(r.date)} · ${esc(r.value)} ${isTime?"秒":"cm"}</b><div class="taskmeta">${esc(r.memo)}</div></div><button class="btn red" data-rdel="${r.id}">削除</button></div>`).join("")||'<p class="muted small">まだ記録がありません。</p>'}
+function fmtTime(s){let m=Math.floor(s/60),sec=(s%60).toFixed(2).padStart(5,"0");return m+":"+sec}
+$("recordTabs").onclick=e=>{let t=e.target.dataset.record;if(!t)return;recordType=t;document.querySelectorAll("#recordTabs .tab").forEach(b=>b.classList.toggle("active",b.dataset.record===t));renderRecords()};
+$("recordForm").onsubmit=e=>{e.preventDefault();state.records.push({id:uid(),type:$("recType").value,value:+$("recValue").value,date:$("recDate").value,memo:$("recMemo").value});recordType=$("recType").value;e.target.reset();$("recDate").value=today();document.querySelectorAll("#recordTabs .tab").forEach(b=>b.classList.toggle("active",b.dataset.record===recordType));save()};
+$("recordHistory").onclick=e=>{let id=e.target.dataset.rdel;if(id&&confirm("記録を削除する？")){state.records=state.records.filter(r=>r.id!==id);save()}};
+$("recDate").value=today();
+function renderCalendar(){let y=calDate.getFullYear(),m=calDate.getMonth(),first=new Date(y,m,1),last=new Date(y,m+1,0);$("monthLabel").textContent=y+"年 "+(m+1)+"月";let html=["日","月","火","水","木","金","土"].map(x=>`<div class="small muted" style="text-align:center">${x}</div>`).join("");for(let i=0;i<first.getDay();i++)html+="<div></div>";for(let d=1;d<=last.getDate();d++){let key=`${y}-${String(m+1).padStart(2,"0")}-${String(d).padStart(2,"0")}`,has=state.runs.some(r=>r.date===key)||!!(state.checks[key]&&Object.values(state.checks[key]).some(Boolean));html+=`<div class="calday ${key===today()?"today":""}" data-day="${key}">${d}${has?'<span class="dot"></span>':""}</div>`}$("calendar").innerHTML=html;$("calendarDetail").textContent="日付を選ぶと、その日の練習内容を確認できるよ。";let week=weekKm(),month=state.runs.filter(r=>r.date.startsWith(`${y}-${String(m+1).padStart(2,"0")}`)).reduce((a,r)=>a+(+r.km||0),0);$("weekKm2").textContent=week.toFixed(1)+" km";$("monthKm").textContent=month.toFixed(1)+" km";let days=Array.from({length:last.getDate()},(_,i)=>i+1);chart("monthChart",days.map(x=>String(x)),[{label:"日別走行距離 km",data:days.map(d=>{let k=`${y}-${String(m+1).padStart(2,"0")}-${String(d).padStart(2,"0")}`;return state.runs.filter(r=>r.date===k).reduce((a,r)=>a+(+r.km||0),0)}),borderColor:"#51dda0",tension:.3}])}
+$("prevMonth").onclick=()=>{calDate.setMonth(calDate.getMonth()-1);renderCalendar()};$("nextMonth").onclick=()=>{calDate.setMonth(calDate.getMonth()+1);renderCalendar()};$("calendar").onclick=e=>{let d=e.target.closest("[data-day]")?.dataset.day;if(!d)return;let runs=state.runs.filter(r=>r.date===d);let completed=Object.values(state.checks[d]||{}).filter(Boolean).length;$("calendarDetail").textContent=`${d}：走行 ${runs.reduce((a,r)=>a+(+r.km||0),0).toFixed(1)} km / チェック ${completed}件 `+runs.map(r=>r.memo).filter(Boolean).join("・")};
+$("wellDate").value=today();$("wellForm").onsubmit=e=>{e.preventDefault();state.wellness=state.wellness.filter(x=>x.date!==$("wellDate").value);state.wellness.push({id:uid(),date:$("wellDate").value,fatigue:+$("fatigue").value,sleep:+$("sleep").value||0,soreness:+$("soreness").value,memo:$("wellMemo").value});e.target.reset();$("wellDate").value=today();save()};
+function renderWellness(){$("wellHistory").innerHTML=state.wellness.slice().sort((a,b)=>b.date.localeCompare(a.date)).slice(0,10).map(w=>`<div class="task"><div class="desc"><b>${w.date} · 疲労 ${w.fatigue}/5</b><div class="taskmeta">睡眠 ${w.sleep||"--"}時間 · 筋肉痛 ${w.soreness}/5 · ${esc(w.memo)}</div></div></div>`).join("")||'<p class="small muted">体調記録はまだありません。</p>'}
+function timerDraw(){$("timerDisplay").textContent=String(Math.floor(timer.left/60)).padStart(2,"0")+":"+String(timer.left%60).padStart(2,"0");$("timerPhase").textContent=timer.phase==="work"?"WORK":timer.phase==="rest"?"REST":timer.phase==="prep"?"GET READY":"READY";$("roundDisplay").textContent=`SET ${timer.round} / ${+$("rounds").value||1}`}
+function timerStep(){if(timer.left>0){timer.left--;timerDraw();return}if(timer.phase==="prep"){timer.phase="work";timer.left=+$("workSec").value||30}else if(timer.phase==="work"){if(timer.round>=+$("rounds").value){clearInterval(timer.interval);timer.running=false;timer.phase="done";$("timerPhase").textContent="COMPLETED!";return}timer.phase="rest";timer.left=+$("restSec").value||30}else if(timer.phase==="rest"){timer.round++;timer.phase="work";timer.left=+$("workSec").value||30}timerDraw()}
+$("timerStart").onclick=()=>{if(timer.running)return;if(timer.phase==="ready"||timer.phase==="done"){timer.round=1;timer.phase=(+$("prepSec").value>0)?"prep":"work";timer.left=timer.phase==="prep"?+$("prepSec").value:+$("workSec").value}timer.running=true;timer.interval=setInterval(timerStep,1000);timerDraw()};
+$("timerPause").onclick=()=>{clearInterval(timer.interval);timer.running=false};$("timerReset").onclick=()=>{clearInterval(timer.interval);timer={interval:null,phase:"ready",left:+$("workSec").value||30,round:0,running:false};timerDraw()};["workSec","restSec","rounds","prepSec"].forEach(id=>$(id).onchange=()=>{if(!timer.running&&timer.phase==="ready"){timer.left=+$("workSec").value||30;timerDraw()}});
+$("goalForm").onsubmit=e=>{e.preventDefault();let type=$("goalType").value;state.goals=state.goals.filter(g=>g.type!==type);state.goals.push({id:uid(),type,value:+$("goalValue").value,date:$("goalDate").value,current:+$("goalCurrent").value||null});e.target.reset();save()};
+function predictGoal(g){
+ const isTime=["1500m","800m","400m","100m"].includes(g.type);
+ const rows=state.records.filter(r=>r.type===g.type && Number.isFinite(+r.value))
+   .sort((a,b)=>a.date.localeCompare(b.date));
+ if(rows.length<2) return {text:"予測には同じ種目の記録があと"+(2-rows.length)+"件必要です。",tone:"muted"};
+ const first=rows[0],last=rows[rows.length-1];
+ const t0=new Date(first.date+"T12:00:00").getTime(), t1=new Date(last.date+"T12:00:00").getTime();
+ const elapsed=(t1-t0)/86400000;
+ if(elapsed<7) return {text:"記録の間隔が短いため、少なくとも1週間以上あけた記録が増えてから予測します。",tone:"muted"};
+ // Linear regression against elapsed days; show a conservative trend estimate, not a promise.
+ const xs=rows.map(r=>(new Date(r.date+"T12:00:00").getTime()-t0)/86400000);
+ const ys=rows.map(r=>+r.value);
+ const mx=xs.reduce((a,b)=>a+b,0)/xs.length, my=ys.reduce((a,b)=>a+b,0)/ys.length;
+ const den=xs.reduce((a,x)=>a+(x-mx)**2,0);
+ if(!den) return {text:"日付の異なる記録を追加すると予測できるよ。",tone:"muted"};
+ const slope=xs.reduce((a,x,i)=>a+(x-mx)*(ys[i]-my),0)/den;
+ const current=ys[ys.length-1], daysLeft=Math.max(0,(new Date(g.date+"T12:00:00")-new Date(last.date+"T12:00:00"))/86400000);
+ const projected=current+slope*daysLeft;
+ const reached=isTime?projected<=g.value:projected>=g.value;
+ const delta=isTime?current-g.value:g.value-current;
+ const unit=isTime?"秒":"cm";
+ const estimate=isTime?fmtTime(projected):projected.toFixed(1)+" cm";
+ const trend=slope===0?"最近の記録は横ばい傾向":(isTime?(slope<0?"タイムは改善傾向":"タイムは低下傾向"):(slope>0?"記録は向上傾向":"記録は低下傾向"));
+ return {text:`直近の傾向：${trend}。期限時点の単純推定は ${estimate}。${reached?"現在の傾向では目標に届く可能性があります。":"現在の傾向では目標との差が残る見込みです。"}（現在の目標との差：${Math.abs(delta).toFixed(2)} ${unit}）`,tone:reached?"good":"warn"};
+}
+function renderGoals(){
+ $("goalList").innerHTML=state.goals.map(g=>{
+  let isTime=["1500m","800m","400m","100m"].includes(g.type),cur=g.current??(state.records.filter(r=>r.type===g.type).sort((a,b)=>b.date.localeCompare(a.date))[0]?.value);
+  let days=Math.ceil((new Date(g.date+"T12:00:00")-new Date(today()+"T12:00:00"))/86400000);
+  let diff=cur==null?null:(isTime?cur-g.value:g.value-cur);
+  return `<div class="task"><div class="desc"><b>${esc(g.type)} · 目標 ${g.value}${isTime?"秒":"cm"}</b><div class="taskmeta">期限 ${g.date} · 現在 ${cur??"未入力"} · ${days>=0?days+"日後":"期限経過"} · ${diff===null?"記録を追加すると進捗を表示":(diff<=0?"目標達成！":"目標まで "+Math.abs(diff).toFixed(2)+(isTime?"秒":"cm"))}</div></div><button class="btn red" data-gdel="${g.id}">削除</button></div>`;
+ }).join("")||'<p class="small muted">目標を登録してね。</p>';
+ const forecasts=state.goals.map(g=>{const p=predictGoal(g);return `<div class="task"><div class="desc"><b>${esc(g.type)} · ${esc(g.date)}まで</b><div class="taskmeta">${esc(p.text)}</div></div><span class="badge">${p.tone==="good"?"順調":p.tone==="warn"?"要確認":"データ待ち"}</span></div>`}).join("");
+ $("goalForecast").innerHTML=forecasts||"目標を登録すると、記録の推移から予測を表示するよ。";
+}
+// Daily mission definitions and status checks.
+const dailyMissionDefs=[
+ {id:"check2",title:"トレーニングを2項目チェック",desc:"今日のメニューを2つ完了する",xp:20,kind:"checks"},
+ {id:"logrun",title:"練習ログを1件記録",desc:"練習メモを残す",xp:20,kind:"run"},
+ {id:"wellness",title:"体調を記録する",desc:"疲労度・睡眠・筋肉痛を入力する",xp:15,kind:"well"}
+];
+function missionStatus(m){
+ const d=today();
+ if(m.kind==="checks") return Object.values(state.checks[d]||{}).filter(Boolean).length>=2;
+ if(m.kind==="run") return state.runs.some(r=>r.date===d);
+ if(m.kind==="well") return state.wellness.some(w=>w.date===d);
+ return false;
+}
+$("goalList").onclick=e=>{let id=e.target.dataset.gdel;if(id){state.goals=state.goals.filter(g=>g.id!==id);save()}};
+
+// ===== PIXEL TITLE COLLECTION / COIN SHOP =====
+const titleDefs=[];
+function addTitleGroup(category,prefix,names,thresholds,metric,baseReward=12){
+ names.forEach((name,i)=>titleDefs.push({id:`${prefix}_${i+1}`,name,category,threshold:thresholds[i],metric,reward:baseReward+Math.floor(i/3)*3,rarity:i>=thresholds.length-2?"epic":i>=thresholds.length-4?"rare":i>=thresholds.length-7?"uncommon":"common"}));
+}
+addTitleGroup("distance","dist",["はじめの一歩","3kmの旅人","5kmランナー","10km突破","15kmの探検家","20kmランナー","30kmの旅人","40km突破","50kmランナー","75kmの挑戦者","100kmクラブ","150kmの巡礼者","200km突破","300kmランナー","500kmレジェンド"],[1,3,5,10,15,20,30,40,50,75,100,150,200,300,500],"km",15);
+addTitleGroup("training","train",["練習デビュー","練習家","努力の芽","習慣の達人","コツコツ職人","継続の力","朝練ビギナー","積み重ねマスター","鉄の意志","不屈のランナー","毎日が成長","努力の化身","練習の守護者","継続の王","伝説の努力家"],[1,5,10,20,30,50,60,80,100,125,150,200,250,300,365],"checks",14);
+addTitleGroup("record","rec",["初記録","記録コレクター","タイムキーパー","自己分析家","データランナー","記録職人","成長の証人","PBハンター","記録マニア","限界突破","記録の探究者","進化する脚","ベスト更新王","タイムの魔術師","記録の伝説"],[1,3,5,8,10,15,20,25,30,40,50,60,75,90,100],"records",18);
+addTitleGroup("race","race",["大会エントリー","初陣","レースチャレンジャー","スタートライン","大会経験者","勝負師","レース探究者","競技場の常連","大会マスター","シーズンランナー","挑戦の証","レースの勇者","大会の達人","競技場の伝説","ランニングヒーロー"],[1,1,2,3,4,5,7,10,12,15,18,20,25,30,40],"tournaments",20);
+addTitleGroup("wellness","well",["体調チェック","セルフケア入門","コンディション意識","回復の達人","睡眠マスター","自分を知る者","ケアの習慣","健康ノート","回復の守護者","コンディション王"],[1,3,5,10,15,20,30,40,60,100],"wellness",14);
+addTitleGroup("form","form",["フォーム観察者","動きの研究家","姿勢チェック","接地マスター","腕振り研究家","フォーム改善家","技術ノート職人","動きの探究者","フォームマスター","走りの職人"],[1,2,3,5,8,10,15,20,30,50],"formNotes",16);
+addTitleGroup("waterbag","wb",["ウォーターバッグ入門","水流チャレンジャー","水揺れコントローラー","体幹マスター","水流の支配者","ウォーターバッグ職人","水流の伝説"],[1,3,5,10,20,30,50],"waterBagSessions",22);
+addTitleGroup("waterbag","wbcore",["体幹バランサー","水流に負けない体幹","体幹の守護者"],[3,10,25],"waterBagCore",25);
+addTitleGroup("distance","run",["走り出した人","ランニング習慣","ロードランナー","距離の開拓者","走行距離の覇者"],[1,10,25,50,100],"runSessions",18);
+addTitleGroup("record","pb",["ベストへの挑戦者","自己ベスト更新候補","タイム分析官","記録更新マスター","限界を超える者"],[1,3,5,10,20],"records",24);
+addTitleGroup("training","check",["チェック職人","メニューコンプリート","練習の積み上げ人","毎週の努力家","トレーニングの伝説"],[25,50,100,250,500],"checks",20);
+addTitleGroup("wellness","care",["体調観察者","回復ルーティン","コンディション職人","セルフケアの達人"],[5,15,30,60],"wellness",18);
+addTitleGroup("form","study",["フォームノート新人","動作分析ビギナー","フォーム改善の達人","走りの研究者"],[1,5,15,30],"formNotes",20);
+addTitleGroup("waterbag","water",["水を操る者","水流の研究者","ウォーターバッグ探究者"],[75,100,150],"waterBagSessions",30);
+addTitleGroup("level","lvl",["クエスト見習い","レベル3到達","レベル5到達","レベル7到達","レベル10到達","レベル12到達","レベル15到達","レベル20到達","レベル25到達","レベル30到達"],[1,3,5,7,10,12,15,20,25,30],"level",20);
+addTitleGroup("training","quest",["ミッション初達成","クエスト3回達成","クエスト5回達成","クエスト10回達成","クエスト15回達成","クエスト20回達成","クエスト30回達成","クエスト40回達成","クエスト50回達成","クエスト75回達成","クエスト100回達成","クエスト125回達成","クエスト150回達成","クエスト200回達成","クエスト300回達成"],[1,3,5,10,15,20,30,40,50,75,100,125,150,200,300],"missionClaims",16);
+const rarityMeta={common:{label:"COMMON",color:"#9fb0c4",coins:0},uncommon:{label:"UNCOMMON",color:"#55d99b",coins:15},rare:{label:"RARE",color:"#77b4ff",coins:30},epic:{label:"EPIC",color:"#c2a6ff",coins:60}};
+const shopItems=[
+ {id:"cap",name:"ドットキャップ",desc:"プロフィールに表示する帽子",icon:"🧢",cost:80},
+ {id:"shoes",name:"スピードシューズ",desc:"走る人のためのプロフィール装備",icon:"👟",cost:120},
+ {id:"flame",name:"炎のオーラ",desc:"プロフィールを熱く演出",icon:"🔥",cost:180},
+ {id:"star",name:"スター背景",desc:"星空のプロフィール背景",icon:"🌟",cost:220},
+ {id:"crown",name:"チャンピオン王冠",desc:"特別な王冠アイテム",icon:"👑",cost:350},
+ {id:"rainbow",name:"レインボーエフェクト",desc:"レアな虹色の演出",icon:"🌈",cost:500},
+ {id:"medal",name:"ゴールドメダル",desc:"努力の証をプロフィールに飾る",icon:"🥇",cost:260},
+ {id:"silver",name:"シルバーメダル",desc:"落ち着いた輝きのメダル",icon:"🥈",cost:180},
+ {id:"bronze",name:"ブロンズメダル",desc:"挑戦を称えるメダル",icon:"🥉",cost:120},
+ {id:"bolt",name:"ライトニング",desc:"電光石火のエフェクト",icon:"⚡",cost:420},
+ {id:"ice",name:"アイスオーラ",desc:"クールな氷の演出",icon:"🧊",cost:380},
+ {id:"comet",name:"コメットエフェクト",desc:"彗星のようなプロフィール演出",icon:"☄️",cost:460},
+ {id:"heart",name:"ハートエフェクト",desc:"毎日の努力を応援する演出",icon:"💚",cost:220},
+ {id:"moon",name:"ナイト背景",desc:"夜空をイメージした背景",icon:"🌙",cost:300},
+ {id:"sun",name:"サンライズ背景",desc:"朝練をイメージした背景",icon:"🌅",cost:300},
+ {id:"diamond",name:"ダイヤモンドフレーム",desc:"特別な輝きのフレーム",icon:"💎",cost:650},
+ {id:"trophy",name:"チャンピオントロフィー",desc:"コレクション用のトロフィー",icon:"🏆",cost:700},
+ {id:"rocket",name:"ロケットブースト",desc:"勢いのあるプロフィール演出",icon:"🚀",cost:550},
+ {id:"firework",name:"花火エフェクト",desc:"達成を祝う花火の演出",icon:"🎆",cost:600},
+ {id:"leaf",name:"リーフバッジ",desc:"回復と成長のシンボル",icon:"🍃",cost:240},
+ {id:"wave",name:"ウェーブ背景",desc:"水の流れをイメージした背景",icon:"🌊",cost:350},
+ {id:"purple",name:"ネオンパープル",desc:"紫色のネオン装飾",icon:"🟣",cost:400},
+ {id:"red",name:"ネオンレッド",desc:"赤色のネオン装飾",icon:"🔴",cost:400},
+ {id:"green",name:"ネオングリーン",desc:"緑色のネオン装飾",icon:"🟢",cost:400},
+ {id:"blue",name:"ネオンブルー",desc:"青色のネオン装飾",icon:"🔵",cost:400}
+];
+function metricValue(key){
+ const checks=Object.values(state.checks||{}).reduce((a,v)=>a+Object.values(v||{}).filter(Boolean).length,0);
+ const km=(state.runs||[]).reduce((a,r)=>a+(+r.km||0),0);
+ const xp=totalXP(), level=Math.floor(xp/100)+1;
+ const waterBagSessions=(state.waterBagLogs||[]).length;
+ const waterBagCore=(state.waterBagLogs||[]).filter(x=>x.type==="core").length;
+ return ({km,checks,runSessions:(state.runs||[]).length,records:(state.records||[]).length,tournaments:(state.tournaments||[]).length,wellness:(state.wellness||[]).length,formNotes:(state.formNotes||[]).length,waterBagSessions,waterBagCore,level,missionClaims:Object.values(state.missions||{}).filter(m=>m.claimed).length})[key]||0;
+}
+function titleUnlocked(t){return metricValue(t.metric)>=t.threshold}
+function pixelSvg(seed,rarity="common"){
+ const palettes={common:["#d8e2ee","#71839a","#34475f"],uncommon:["#a6ffd0","#36b77c","#1d684e"],rare:["#b9dcff","#5598ee","#254b9b"],epic:["#f1c7ff","#a66be8","#57318e"]};
+ const c=palettes[rarity]||palettes.common;
+ const patterns=[
+ ["00111100","01222210","12222221","12211221","12222221","01222210","00111100","00011000"],
+ ["00011000","00111100","01122110","11122211","01122110","00111100","00011000","00011000"],
+ ["00100100","01111110","11222211","11222211","01111110","00111100","00100100","00011000"],
+ ["00011000","00111100","01111110","11222211","11222211","01111110","00111100","00011000"]
+ ];
+ const pat=patterns[seed%patterns.length];
+ let rect="";for(let y=0;y<8;y++)for(let x=0;x<8;x++){const v=+pat[y][x];if(v)rect+=`<rect x="${x*4}" y="${y*4}" width="4" height="4" fill="${c[v-1]}"/>`;}
+ return `<svg viewBox="0 0 32 32" width="54" height="54" shape-rendering="crispEdges" aria-hidden="true"><rect width="32" height="32" rx="4" fill="#0a1422"/>${rect}</svg>`;
+}
+function syncTitleAwards(){
+ let changed=false;
+ for(const t of titleDefs){if(titleUnlocked(t)&&!state.titleUnlocks[t.id]){
+  const reward=rarityMeta[t.rarity].coins+Math.floor(t.reward/3);
+  state.titleUnlocks[t.id]={date:today(),coins:reward};state.coins=(Number(state.coins)||0)+reward;changed=true;
+ }}
+ if(changed)localSave();
+}
+function rarityLabel(r){return rarityMeta[r]?.label||"COMMON"}
+function renderCollection(){
+ if(!$("titleBook"))return;
+ const unlocked=titleDefs.filter(t=>state.titleUnlocks[t.id]).length;
+ $("titleUnlocked").textContent=`${unlocked} / ${titleDefs.length}`;
+ $("coinBalance").textContent=(Number(state.coins)||0).toLocaleString();
+ $("titleRate").textContent=Math.round(unlocked/titleDefs.length*100)+"%";
+ $("titleProgress").style.width=(unlocked/titleDefs.length*100)+"%";
+ const equipped=titleDefs.find(t=>t.id===state.equippedTitle);
+ $("equippedTitle").innerHTML=equipped?`<div class="pixelIcon">${pixelSvg(titleDefs.indexOf(equipped),equipped.rarity)}</div><div class="desc"><b>${esc(equipped.name)}</b><div class="taskmeta">${rarityLabel(equipped.rarity)} · 装備中</div></div><button class="btn" id="unequipTitle">はずす</button>`:`<div class="desc"><b>称号未装備</b><div class="taskmeta">獲得した称号からお気に入りを選んでね。</div></div>`;
+ const filter=$("titleFilter").value,stateFilter=$("titleStateFilter").value;
+ const filtered=titleDefs.filter(t=>(filter==="all"||t.category===filter)&&(stateFilter==="all"||(stateFilter==="owned"?!!state.titleUnlocks[t.id]:!state.titleUnlocks[t.id])));
+ $("titleBook").innerHTML=filtered.map(t=>{
+  const owned=!!state.titleUnlocks[t.id],i=titleDefs.indexOf(t);
+  return `<div class="task" style="align-items:center;${owned?"":"opacity:.72"}"><div>${owned?pixelSvg(i,t.rarity):'<div style="width:54px;height:54px;display:grid;place-items:center;background:#0a1422;border-radius:5px;color:#60738a;font-size:25px">?</div>'}</div><div class="desc"><b>${owned?esc(t.name):"？？？"}</b><div class="taskmeta"><span style="color:${rarityMeta[t.rarity].color}">${rarityLabel(t.rarity)}</span> · ${owned?"獲得 "+state.titleUnlocks[t.id].date:"条件："+t.threshold+(t.metric==="km"?"km":t.metric==="checks"?"回":t.metric==="level"?"Lv":"件")}</div></div>${owned?`<button class="btn" data-equip-title="${t.id}">${state.equippedTitle===t.id?"装備中":"装備"}</button>`:'<span class="badge">未獲得</span>'}</div>`;
+ }).join("")||'<p class="small muted">該当する称号はまだないよ。</p>';
+ $("pixelShop").innerHTML=shopItems.map(item=>{
+  const owned=state.shopOwned.includes(item.id);
+  return `<div class="shopItem"><div class="shopIcon">${item.icon}</div><div class="desc"><b>${esc(item.name)}</b><div class="taskmeta">${esc(item.desc)}<br>🪙 ${item.cost}コイン</div></div><button class="btn ${owned?"":"primary"}" data-buy-item="${item.id}" ${owned?"disabled":state.coins<item.cost?"disabled":""}>${owned?"購入済み":"購入"}</button></div>`;
+ }).join("");
+ $("unequipTitle")?.addEventListener("click",()=>{state.equippedTitle=null;save()});
+}
+$("titleBook")?.addEventListener("click",e=>{
+ const id=e.target.closest("[data-equip-title]")?.dataset.equipTitle;if(!id||!state.titleUnlocks[id])return;
+ state.equippedTitle=id;save();alert("称号を装備したよ！");
+});
+$("pixelShop")?.addEventListener("click",e=>{
+ const id=e.target.closest("[data-buy-item]")?.dataset.buyItem,item=shopItems.find(x=>x.id===id);
+ if(!item||state.shopOwned.includes(id)||state.coins<item.cost)return;
+ if(!confirm(`${item.name}を${item.cost}コインで購入する？`))return;
+ state.coins-=item.cost;state.shopOwned.push(id);save();alert(`${item.name}を獲得！`);
+});
+$("titleFilter")?.addEventListener("change",renderCollection);
+$("titleStateFilter")?.addEventListener("change",renderCollection);
+
+function renderMissions(){
+ const d=today(), saved=state.missions[d]||{claimed:false,xp:0};
+ let completed=0,earned=saved.claimed?(saved.xp||0):0;
+ $("missionList").innerHTML=dailyMissionDefs.map(m=>{
+  const ok=missionStatus(m);if(ok)completed++;
+  return `<div class="task ${ok?"done":""}"><div class="desc"><div class="taskname">${esc(m.title)}</div><div class="taskmeta">${esc(m.desc)} · 報酬 ${m.xp} XP</div></div><span class="badge">${ok?"達成":"未達成"}</span></div>`;
+ }).join("")+`<button class="btn primary" id="claimMissions" style="width:100%;margin-top:10px" ${completed===0||saved.claimed?"disabled":""}>${saved.claimed?"今日の報酬は受取済み":"達成報酬を受け取る"}</button>`;
+ $("missionCount").textContent=completed+" / 3";$("missionXP").textContent=earned+" XP";
+ $("badgeCollection").innerHTML='<div class="task"><div class="desc"><b>称号図鑑をチェック！</b><div class="taskmeta">100種類以上の称号を集めて、コインも獲得しよう。</div></div><button class="btn" onclick="document.querySelector(\'[data-page=collection]\').click()">図鑑を開く</button></div>';
+ const claim=$("claimMissions");if(claim)claim.onclick=()=>{
+  const now=state.missions[today()]||{claimed:false,xp:0};
+  if(now.claimed)return;
+  const n=dailyMissionDefs.filter(m=>missionStatus(m)).length;
+  if(!n)return;
+  now.claimed=true;now.xp=dailyMissionDefs.filter(m=>missionStatus(m)).reduce((a,m)=>a+m.xp,0);now.coins=20+10*n;state.coins=(Number(state.coins)||0)+now.coins;
+  state.missions[today()]=now;save();
+ };
+}
+$("tournamentForm").onsubmit=e=>{
+ e.preventDefault();
+ state.tournaments.push({id:uid(),name:$("raceName").value.trim(),event:$("raceEvent").value,date:$("raceDate").value,target:+$("raceTarget").value||null,memo:$("raceMemo").value.trim()});
+ e.target.reset();$("raceDate").value=today();save();
+};
+$("raceDate").value=today();
+function renderTournaments(){
+ const rows=(state.tournaments||[]).slice().sort((a,b)=>a.date.localeCompare(b.date));
+ $("raceList").innerHTML=rows.map(r=>{
+  const days=Math.ceil((new Date(r.date+"T00:00:00")-new Date(today()+"T00:00:00"))/86400000);
+  const countdown=days===0?"今日！":days>0?`あと${days}日`:`${Math.abs(days)}日前`;
+  return `<div class="task"><div class="desc"><b>${esc(r.name)} · ${esc(r.event)}</b><div class="taskmeta">${esc(r.date)} · ${countdown}${r.target?` · 目標 ${esc(r.target)}秒`:""}${r.memo?`<br>${esc(r.memo)}`:""}</div></div><button class="btn red" data-race-del="${r.id}">削除</button></div>`;
+ }).join("")||'<p class="small muted">大会を登録すると、ここにカウントダウンが表示されるよ。</p>';
+}
+$("raceList").onclick=e=>{const id=e.target.dataset.raceDel;if(id){state.tournaments=state.tournaments.filter(x=>x.id!==id);save()}};
+$("formDate").value=today();
+$("formNoteForm").onsubmit=e=>{
+ e.preventDefault();
+ state.formNotes.push({id:uid(),date:$("formDate").value,area:$("formArea").value,good:$("formGood").value.trim(),improve:$("formImprove").value.trim(),next:$("formNext").value.trim()});
+ e.target.reset();$("formDate").value=today();save();
+};
+function renderFormNotes(){
+ $("formNoteHistory").innerHTML=(state.formNotes||[]).slice().sort((a,b)=>b.date.localeCompare(a.date)).map(n=>
+ `<div class="task"><div class="desc"><b>${esc(n.date)} · ${esc(n.area)}</b><div class="taskmeta">できたこと：${esc(n.good||"未入力")}<br>改善点：${esc(n.improve||"未入力")}<br>次回：${esc(n.next||"未入力")}</div></div><button class="btn red" data-form-del="${n.id}">削除</button></div>`
+ ).join("")||'<p class="small muted">フォームノートはまだありません。</p>';
+}
+$("formNoteHistory").onclick=e=>{const id=e.target.dataset.formDel;if(id){state.formNotes=state.formNotes.filter(x=>x.id!==id);save()}};
+$("exportData").onclick=()=>{
+ const payload={app:"ATHLETE_QUEST",version:3,exportedAt:new Date().toISOString(),data:state};
+ const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});
+ const url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=`athlete-quest-backup-${today()}.json`;a.click();URL.revokeObjectURL(url);
+};
+$("importData").onchange=async e=>{
+ const file=e.target.files?.[0];if(!file)return;
+ try{
+  const parsed=JSON.parse(await file.text()),incoming=parsed.data||parsed;
+  if(!incoming||!Array.isArray(incoming.runs)||!Array.isArray(incoming.records))throw new Error("ATHLETE QUESTのバックアップではないようです");
+  if(!confirm("バックアップの記録を現在のデータに追加・統合するよ。今ある記録や称号は消さないよ。続ける？"))return;
+  const arrayKeys=["runs","records","wellness","goals","customTasks","logs","tournaments","formNotes","waterBagLogs"];
+  for(const key of arrayKeys){
+   const current=Array.isArray(state[key])?state[key]:[];
+   const added=Array.isArray(incoming[key])?incoming[key]:[];
+   const seen=new Set(current.map((v,i)=>v?.id??`${v?.date||""}|${v?.type||v?.event||v?.name||""}|${v?.time||v?.km||i}`));
+   state[key]=current.concat(added.filter((v,i)=>{const k=v?.id??`${v?.date||""}|${v?.type||v?.event||v?.name||""}|${v?.time||v?.km||i}`;if(seen.has(k))return false;seen.add(k);return true}));
+  }
+  state.checks={...(incoming.checks||{}),...(state.checks||{})};
+  state.missions={...(incoming.missions||{}),...(state.missions||{})};
+  state.titleUnlocks={...(incoming.titleUnlocks||{}),...(state.titleUnlocks||{})};
+  state.shopOwned=[...new Set([...(state.shopOwned||[]),...(incoming.shopOwned||[])])];
+  state.coins=(Number(state.coins)||0)+(Number(incoming.coins)||0);
+  state.equippedTitle=state.equippedTitle||incoming.equippedTitle||null;
+  state.tasks=Array.isArray(incoming.tasks)?[...new Map([...(state.tasks||[]),...incoming.tasks].map(t=>[t.id,t])).values()]:state.tasks;
+  localSave();renderAll();alert("バックアップを統合したよ！既存データは残してあるよ。");
+ }catch(err){alert("読み込みに失敗したよ："+err.message)}
+ e.target.value="";
+};
+function renderDataPanel(){
+ $("dataRunCount").textContent=state.runs.length+"件";
+ $("dataRecordCount").textContent=state.records.length+"件";
+ $("dataFormCount").textContent=(state.formNotes||[]).length+"件";
+}
+
+function renderWaterBag(){
+ const logs=state.waterBagLogs||[];
+ const total=logs.reduce((a,x)=>a+(+x.minutes||0),0);
+ if($("wbSessionCount"))$("wbSessionCount").textContent=logs.length;
+ if($("wbTotalMinutes"))$("wbTotalMinutes").textContent=total+"分";
+ if($("wbHistory"))$("wbHistory").innerHTML=logs.slice().reverse().slice(0,8).map(x=>{
+  const names={core:"体幹トレーニング",squat:"スクワット",lunge:"ランジ",carry:"バッグを持って歩く",balance:"バランス練習",press:"プレス・上半身",other:"その他"};
+  return `<div class="task"><div class="desc"><b>${esc(names[x.type]||"トレーニング")}</b><div class="taskmeta">${esc(x.date)} · ${esc(x.amount||"回数未入力")} · ${+x.minutes||0}分${x.memo?" · "+esc(x.memo):""}</div></div></div>`;
+ }).join("")||'<p class="small muted">まだ記録がないよ。最初の練習を記録してみよう！</p>';
+}
+function renderAll(){syncTitleAwards();renderTop();renderTasks();renderWeek();renderRecords();renderCalendar();renderWellness();renderGoals();renderTournaments();renderMissions();renderCollection();renderFormNotes();renderWaterBag();renderDataPanel()}
+try { renderAll(); timerDraw(); }
+catch (error) {
+ console.error("ATHLETE QUEST startup error:", error);
+ document.body.insertAdjacentHTML("afterbegin",
+  '<div style="margin:12px;padding:14px;background:#542b2b;color:white;border-radius:12px">起動エラーが発生しました。ブラウザを更新して、まだ直らなければ画面を送ってください。</div>');
+}
+</script>
+<script>
+if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(err => console.warn('PWA service worker:', err)));
+}
+</script>
+</body></html>

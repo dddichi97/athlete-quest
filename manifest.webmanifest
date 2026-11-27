@@ -1,0 +1,18 @@
+{
+  "id": "./",
+  "name": "ATHLETE QUEST - LEGEND EDITION",
+  "short_name": "ATHLETE QUEST",
+  "description": "陸上選手のためのトレーニング・記録管理アプリ",
+  "lang": "ja",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0a101c",
+  "theme_color": "#0b1220",
+  "icons": [
+    {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}
